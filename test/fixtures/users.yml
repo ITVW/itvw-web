@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  carrier_id: 
+  phone: MyString
+  nickname: MyString
+
+two:
+  carrier_id: 
+  phone: MyString
+  nickname: MyString
