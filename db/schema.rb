@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20160601021542) do
 
   create_table "carriers", force: :cascade do |t|
     t.string   "name"
-    t.string   "email_address"
+    t.string   "email_address", null: false
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
@@ -24,10 +24,10 @@ ActiveRecord::Schema.define(version: 20160601021542) do
 
   create_table "sessions", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "session_key"
-    t.string   "auth_code"
-    t.date     "last_auth_attempt"
-    t.date     "last_active"
+    t.string   "session_key",       null: false
+    t.string   "auth_code",         null: false
+    t.datetime "last_auth_attempt", null: false
+    t.datetime "last_active",       null: false
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
   end
@@ -38,8 +38,8 @@ ActiveRecord::Schema.define(version: 20160601021542) do
 
   create_table "users", force: :cascade do |t|
     t.integer  "carrier_id"
-    t.string   "phone"
-    t.string   "nickname"
+    t.string   "phone",      null: false
+    t.string   "nickname",   null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -49,8 +49,8 @@ ActiveRecord::Schema.define(version: 20160601021542) do
 
   create_table "vaporwaves", force: :cascade do |t|
     t.integer  "user_id"
-    t.binary   "image"
-    t.integer  "score"
+    t.binary   "image",      null: false
+    t.integer  "score",      null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 20160601021542) do
   create_table "votes", force: :cascade do |t|
     t.integer  "vaporwave_id"
     t.integer  "user_id"
-    t.boolean  "vote"
+    t.boolean  "vote",         null: false
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
