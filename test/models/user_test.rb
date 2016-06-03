@@ -21,7 +21,7 @@ class UserTest < ActiveSupport::TestCase
   end
   
   test "phone should not be too long" do
-    @user.phone = "0123456789ABCDEF"
+    @user.phone = "0123456789012345"
     assert_not @user.valid?
   end
   
