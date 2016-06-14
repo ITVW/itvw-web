@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   belongs_to :carrier
+  has_many   :session
   
   # user carrier
   validates :carrier, presence: true
